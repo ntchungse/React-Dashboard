@@ -1,0 +1,41 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+    transition: 850ms;
+    margin: 0 0 0 7%;
+}
+.navbarActive {
+    margin: 0 0 0 15%;
+    transition: 350ms;
+}
+.navbar__search {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    flex-grow: 0.3;
+    margin-left: 20px;
+}
+.navbar__search input {
+    flex-grow: 0.8;
+    height: 30px;
+    padding: 15px;
+}
+
+.navbar__search button{
+    margin-left: 15px;
+    flex-grow: 0.2;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar__icons {
+    flex-grow: 0.1;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
