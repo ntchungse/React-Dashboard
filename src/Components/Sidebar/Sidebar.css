@@ -29,27 +29,34 @@
   height: 100%;
 }
 .sidebar__item {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  list-style: none;
-  width: 100%;
-  height: 50px;
   margin: 10px 0;
-}
-.sidebar__item a {
   text-decoration: none;
   width: 100%;
-  height: 100%;
+  height: 50px;
   display: flex;
   align-items: center;
   font-size: 1.3rem;
-  margin-left: 20px;
 }
-.sidebar__item a svg {
+.sidebar__item svg {
   font-size: 1.3rem;
-  margin-right: 10px;
+  margin: 0 10px;
 }
-.sidebar__item:hover {
+.sidebar__item:hover,
+.sidebar__userDropdown a:hover {
+  background-color: #cfd3ce;
+}
+.sidebar__userDropdown {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sidebar__userDropdown a {
+  width: 100%;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.3rem;
+}
+.open {
   background-color: #cfd3ce;
 }

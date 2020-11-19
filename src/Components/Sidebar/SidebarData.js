@@ -16,7 +16,7 @@ export const SidebarData = [
     cName: "sidebar__item",
   },
   {
-    title: "Customer",
+    title: "User",
     path: "/",
     icon: <FaUser />,
     cName: "sidebar__item",
