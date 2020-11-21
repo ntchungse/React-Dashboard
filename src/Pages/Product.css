@@ -1,0 +1,16 @@
+.product {
+    width: 1100px;
+    height: 500px;
+}
+.product__nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.product__add {
+    width: 150px;
+    height: 30px;
+    background-color: #dbe2ef;
+    border-radius: 10px;
+    border: none;
+}

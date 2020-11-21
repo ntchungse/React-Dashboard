@@ -1,26 +1,24 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { FaBars } from "react-icons/fa";
-import "./App.css";
+import React from "react";
+import {
+  Switch,
+  Route,
+  BrowserRouter as Router
+} from "react-router-dom";
+import Dashboard from "./Pages/Dashboard";
+import Login from "./Pages/Login";
+import ResetPassword from "./Pages/ResetPassword";
 
-import Sidebar from "./Components/Sidebar/Sidebar";
-import Navbar from "./Components/Navbar/Navbar";
-import Shop from "./Pages/Shop";
+import "./App.css"
+
 function App() {
-  const [sidebar, setSidebar] = useState(false);
-  const showSidebar = () => setSidebar(!sidebar);
+
   return (
-    <div className="App">
+    <div>
       <Router>
-        <Link to="#" className={sidebar ? "menu activeMenu" : "menu"}>
-          <FaBars style={{ fontSize: "2.5rem" }} onClick={showSidebar} />
-        </Link>
-        <Navbar sidebar={sidebar} />
-        <Sidebar sidebar={sidebar} />
         <Switch>
-          <div className={sidebar ? "main activeMain" : "main"}>
-            <Route path="/shop" exact component={Shop} />
-          </div>
+          <Route exact path="/" component={Login} />
+          <Route path="/dashboard" component={Dashboard} />
+          <Route path="/reset" component={ResetPassword} />
         </Switch>
       </Router>
     </div>

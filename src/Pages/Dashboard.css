@@ -1,0 +1,24 @@
+.menu {
+  position: fixed;
+  top: 13px;
+  left: 7px;
+  transition: 850ms;
+  z-index: 1;
+}
+.menu.activeMenu {
+  top: 13px;
+  left: 11%;
+  transition: 350ms;
+}
+.main {
+  width: 100%;
+  height: 100vh;
+  margin: 0 0 0 5%;
+  transition: 850ms;
+}
+.main.activeMain {
+  width: 100%;
+  height: 100vh;
+  margin: 0 0 0 17%;
+  transition: 350ms;
+}

@@ -1,6 +1,6 @@
 import React from "react";
-import * as FaIcons from "react-icons/fa";
-import * as MdIcons from "react-icons/md"
+import { FaSearch } from "react-icons/fa";
+import { MdAccountCircle } from "react-icons/md"
 import { Link } from "react-router-dom";
 
 import './Navbar.css';
@@ -11,13 +11,13 @@ function Navbar({ sidebar }) {
       <div className="navbar__search">
         <input placeholder="Search" />
         <button>
-          <FaIcons.FaSearch />
+          <FaSearch />
         </button>
       </div>
       <div className="navbar__icons">
         {/* <MdIcons.MdNotifications /> */}
         <Link to="#">
-        <MdIcons.MdAccountCircle />
+        <MdAccountCircle />
         </Link>
        
       </div>

@@ -5,7 +5,7 @@ import { FaUser, FaBox, FaTag, FaReceipt } from "react-icons/fa";
 export const SidebarData = [
   {
     title: "Dashboard",
-    path: "/",
+    path: "/dashboard",
     icon: <AiFillHome />,
     cName: "sidebar__item",
   },

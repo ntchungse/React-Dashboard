@@ -19,9 +19,8 @@ function Sidebar({ sidebar }) {
         {SidebarData.map((item, index) => {
           if (item.title === "User") {
             return (
-              <React.Fragment>
+              <React.Fragment key={index}>
                 <NavLink
-                  key={index}
                   className={item.cName}
                   style={{ display: "flex" }}
                   onClick={handleDropdown}
