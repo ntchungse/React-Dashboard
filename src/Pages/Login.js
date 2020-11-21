@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link, Redirect} from "react-router-dom";
+import isLoggedIn from "../CheckAuth";
 import "./Login.css";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loggedIn, setLoggedIn] = useState(
-    localStorage.getItem("token") === null ? false : true
-  );
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = {
@@ -19,7 +17,6 @@ function Login() {
       .post("http://3.25.210.151/api/Admin/auth/Login", data)
       .then((res) => {
         localStorage.setItem("token", res.data);
-        setLoggedIn(true);
       })
       .catch((err) => {
         console.log(err);
@@ -27,7 +24,7 @@ function Login() {
   };
   return (
     <React.Fragment>
-      {loggedIn ? (
+      {isLoggedIn() ? (
         <Redirect to="/dashboard" />
       ) : (
         <div className="login">
