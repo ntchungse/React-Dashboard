@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Link, Redirect} from "react-router-dom";
+import { Link, Redirect, useHistory} from "react-router-dom";
 import isLoggedIn from "../CheckAuth";
 import "./Login.css";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const history = useHistory();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = {
@@ -17,6 +19,7 @@ function Login() {
       .post("http://3.25.210.151/api/Admin/auth/Login", data)
       .then((res) => {
         localStorage.setItem("token", res.data);
+        history.push("/dashboard");
       })
       .catch((err) => {
         console.log(err);
@@ -53,7 +56,6 @@ function Login() {
             <Link to="/reset">
               Forgot password ?
             </Link>
-
             <button type="submit" className="login__button">
               Login
             </button>
