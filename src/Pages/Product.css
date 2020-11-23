@@ -14,3 +14,10 @@
     border-radius: 10px;
     border: none;
 }
+.product__main {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: auto;
+    gap: 10px 10px;
+    padding: 10px;
+}

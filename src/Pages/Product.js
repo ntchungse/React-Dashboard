@@ -7,16 +7,35 @@ import ProductCard from "../Components/ProductCard/ProductCard";
 import './Product.css';
 
 function Product() {
-  const [product, setProduct] = useState([]);
+  const [product, setProduct] = useState([
+    {
+      price: 1000
+    },
+    {
+      price: 1000
+    },
+    {
+      price: 1000
+    },
+    {
+      price: 1000
+    },
+    {
+      price: 1000
+    },
+    {
+      price: 1000
+    }
+  ]);
 
-  useEffect(() => {
-    const getProduct = async () => {
-      await axios
-        .get("http://3.25.210.151/api/Admin/Product")
-        .then((res) => setProduct(res.data.products));
-    };
-    getProduct();
-  }, []);
+  // useEffect(() => {
+  //   const getProduct = async () => {
+  //     await axios
+  //       .get("http://3.25.210.151/api/Admin/Product")
+  //       .then((res) => setProduct(res.data.products));
+  //   };
+  //   getProduct();
+  // }, []);
 
   return (
     <div className="product">
@@ -32,7 +51,6 @@ function Product() {
       </div>
       <div className="product__main">
         {
-          // console.log(product)
             product.map((product) => {
                 return (
                     <ProductCard image={"https://via.placeholder.com/150"} 
