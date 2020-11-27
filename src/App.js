@@ -9,6 +9,7 @@ import { FaBars } from "react-icons/fa";
 
 import "./App.css";
 import Product from "./Pages/Product";
+import Order from "./Pages/Order";
 
 function App() {
   const [sidebar, setSidebar] = useState(true);
@@ -22,12 +23,14 @@ function App() {
         <Navbar sidebar={sidebar} />
         <Sidebar sidebar={sidebar} />
         <Switch>
-          <Route exact path="/login" component={Login} />
-          <ProtectedRoute path="/dashboard" component={App} />
+          <Route exact path="/" component={Login} />
           <Route path="/reset" component={ResetPassword} />
-          <div className={sidebar ? "main activeMain" : "main"}>
-            <ProtectedRoute path="/product" component={Product} />
-          </div>
+          <React.Fragment>
+            <div className={sidebar ? "main activeMain" : "main"}>
+              <ProtectedRoute path="/product" component={Product} />
+              <ProtectedRoute path="/order" component={Order} />
+            </div>
+          </React.Fragment>
         </Switch>
       </Router>
     </div>

@@ -7,35 +7,15 @@ import ProductCard from "../Components/ProductCard/ProductCard";
 import './Product.css';
 
 function Product() {
-  const [product, setProduct] = useState([
-    {
-      price: 1000
-    },
-    {
-      price: 1000
-    },
-    {
-      price: 1000
-    },
-    {
-      price: 1000
-    },
-    {
-      price: 1000
-    },
-    {
-      price: 1000
-    }
-  ]);
-
-  // useEffect(() => {
-  //   const getProduct = async () => {
-  //     await axios
-  //       .get("http://3.25.210.151/api/Admin/Product")
-  //       .then((res) => setProduct(res.data.products));
-  //   };
-  //   getProduct();
-  // }, []);
+  const [product, setProduct] = useState([]);
+  useEffect(() => {
+    const getProduct = async () => {
+      await axios
+        .get("http://3.25.210.151/api/Admin/Product")
+        .then((res) => setProduct(res.data.products));
+    };
+    getProduct();
+  }, []);
 
   return (
     <div className="product">
@@ -51,10 +31,11 @@ function Product() {
       </div>
       <div className="product__main">
         {
+          
             product.map((product) => {
                 return (
-                    <ProductCard image={"https://via.placeholder.com/150"} 
-                    desc={"Lorem Ipsum is simply dummy text of the printing and typesetting industry"}
+                    <ProductCard key={product.id} image={product.imageUrl} 
+                    desc={product.name}
                     price={product.price} />
                 )
             })

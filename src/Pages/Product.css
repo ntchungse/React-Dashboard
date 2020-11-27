@@ -1,11 +1,11 @@
 .product {
-    width: 1100px;
-    height: 500px;
+    max-width: inherit;
+    max-height: inherit;
 }
 .product__nav {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .product__add {
     width: 150px;
@@ -16,8 +16,25 @@
 }
 .product__main {
     display: grid;
-    grid-template-columns: 30% 30% 30%;
+    grid-template-columns: 25% 25% 25% 25%;
     grid-template-rows: auto;
-    gap: 10px 10px;
-    padding: 10px;
+    grid-gap: 20px 20px;
+    justify-items: stretch;
+    justify-content: center;
+}
+.product__search {
+    display: flex;
+    align-items: center;
+}
+.product__search input {
+    width: 200px;
+    padding: 0 10px;
+    margin-right: 5px;
+}
+.product__search button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 26px;
+    width: 50px;
 }
