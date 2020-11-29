@@ -17,16 +17,16 @@ function App() {
   return (
     <div>
       <Router>
-        <Link to="#" className={sidebar ? "menu activeMenu" : "menu"}>
-          <FaBars style={{ fontSize: "2.5rem" }} onClick={showSidebar} />
-        </Link>
-        <Navbar sidebar={sidebar} />
-        <Sidebar sidebar={sidebar} />
         <Switch>
           <Route exact path="/" component={Login} />
           <Route path="/reset" component={ResetPassword} />
           <React.Fragment>
             <div className={sidebar ? "main activeMain" : "main"}>
+              <Link to="#" className={sidebar ? "menu activeMenu" : "menu"}>
+                <FaBars style={{ fontSize: "2.5rem" }} onClick={showSidebar} />
+              </Link>
+              <Navbar sidebar={sidebar} />
+              <Sidebar sidebar={sidebar} />
               <ProtectedRoute path="/product" component={Product} />
               <ProtectedRoute path="/order" component={Order} />
             </div>

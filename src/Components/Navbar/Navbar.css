@@ -1,41 +1,96 @@
 .navbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 4rem;
-    transition: 850ms;
-    margin: 0 0 0 7%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+  transition: 850ms;
+  margin: 0 0 0 7%;
 }
 .navbarActive {
-    margin: 0 0 0 15%;
-    transition: 350ms;
+  margin: 0 0 0 15%;
+  transition: 350ms;
 }
 .navbar__search {
-    display: flex;
-    align-items: center;
-    height: 50px;
-    flex-grow: 0.3;
-    margin-left: 20px;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  flex-grow: 0.3;
+  margin-left: 20px;
 }
 .navbar__search input {
-    flex-grow: 0.8;
-    height: 30px;
-    padding: 15px;
+  flex-grow: 0.8;
+  height: 30px;
+  padding: 15px;
 }
 
-.navbar__search button{
-    margin-left: 15px;
-    flex-grow: 0.2;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.navbar__search button {
+  margin-left: 15px;
+  flex-grow: 0.2;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.navbar__icons {
-    flex-grow: 0.1;
-    font-size: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+.menu-container {
+  position: relative;
+  flex-grow: 0.05;
+}
+.dropdown {
+  background: #ffffff;
+  border-radius: 8px;
+  position: absolute;
+  top: 60px;
+  right: 5px;
+  width: 100px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+}
+.dropdown.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown li {
+  border-bottom: 1px solid #dddddd;
+}
+
+.dropdown li a {
+  text-decoration: none;
+  color: #333333;
+  padding: 5px 20px;
+  display: block;
+}
+.menu-trigger {
+  background: #ffffff;
+  border-radius: 90px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  border: none;
+  vertical-align: middle;
+  transition: box-shadow 0.4s ease;
+}
+
+.menu-trigger:hover {
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+}
+
+.menu-trigger svg {
+  border-radius: 90px;
+  font-size: 30px;
 }
