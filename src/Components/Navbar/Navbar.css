@@ -6,9 +6,10 @@
   height: 4rem;
   transition: 850ms;
   margin: 0 0 0 7%;
+  background-color: #ffffff;
 }
 .navbarActive {
-  margin: 0 0 0 15%;
+  margin-left: 250px;
   transition: 350ms;
 }
 .navbar__search {

@@ -27,6 +27,7 @@ function App() {
               </Link>
               <Navbar sidebar={sidebar} />
               <Sidebar sidebar={sidebar} />
+              {/* <ProtectedRoute path="/dashboard" component={App} /> */}
               <ProtectedRoute path="/product" component={Product} />
               <ProtectedRoute path="/order" component={Order} />
             </div>

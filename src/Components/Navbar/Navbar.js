@@ -1,13 +1,14 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { FaSearch } from "react-icons/fa";
 import { MdAccountCircle } from "react-icons/md"
 import { Link } from "react-router-dom";
+import { useDetectOutsideClick } from '../../useDetectOutsideClick.js';
 
 import './Navbar.css';
 
 const DropdownMenu = () => {
-  const drowdownRef = useRef(null);
-  const [isActive, setIsActive] = useState(false);
+  const dropdownRef = useRef(null);
+  const [isActive, setIsActive] = useDetectOutsideClick(dropdownRef, false);
   const handleClick = () => setIsActive(!isActive);
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -17,7 +18,7 @@ const DropdownMenu = () => {
       <button onClick={handleClick} className="menu-trigger">
       <MdAccountCircle/>
       </button>
-      <nav ref={drowdownRef} className={`dropdown ${isActive ? 'active' : 'inactive'}`}>
+      <nav ref={dropdownRef} className={`dropdown ${isActive ? 'active' : 'inactive'}`}>
         <ul>
           <li><Link to="#">Profile</Link></li>
           <li><Link to="/" onClick={handleLogout}>Logout</Link></li>

@@ -11,7 +11,11 @@ function Product() {
   useEffect(() => {
     const getProduct = async () => {
       await axios
-        .get("http://3.25.210.151/api/Admin/Product")
+        .get("http://3.25.210.151/api/Admin/Product",{
+        params: {
+          limit: 8
+        }
+      })
         .then((res) => setProduct(res.data.products));
     };
     getProduct();
@@ -34,8 +38,8 @@ function Product() {
           
             product.map((product) => {
                 return (
-                    <ProductCard key={product.id} image={product.imageUrl} 
-                    desc={product.name}
+                    <ProductCard key={product.id} image={product.media.url} 
+                    desc={product.description}
                     price={product.price} />
                 )
             })
