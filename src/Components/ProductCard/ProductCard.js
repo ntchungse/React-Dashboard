@@ -1,7 +1,6 @@
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import "./ProductCard.css";
-import Modal from "react-modal";
 import { Link } from "react-router-dom";
 import { useDetectOutsideClick } from "../../useDetectOutsideClick";
 
@@ -25,29 +24,14 @@ const DropdownProduct = () => {
   )
 }
 
-function ProductCard({ image, desc, price, key }) {
-  const [dropdown, setDropdown] = useState(false);
-  const [modal, setModal] = useState(false);
-  const openModal = () => {
-    setModal(true);
-  };
-  const closeModal = () => {
-    setModal(false);
-  };
+function ProductCard({ image, desc, price }) {
   return (
     <div className="product__card">
       <img className="product__cardImg" src={image} alt={desc} />
       <DropdownProduct/>
       <p className="product__cardDesc">{desc}</p>
       <p className="product__cardPrice">${price}</p>
-      {/* {modal && (
-        <Modal isOpen={true} onRequestClose={closeModal}>
-            <button className="close__modal" onClick={closeModal}>x</button>
-              <div className="">
-                
-              </div>
-        </Modal>
-      )} */}
+     
     </div>
   );
 }

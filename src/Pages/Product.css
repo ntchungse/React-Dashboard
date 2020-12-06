@@ -13,6 +13,7 @@
     background-color: #dbe2ef;
     border-radius: 10px;
     border: none;
+    outline: none;
 }
 .product__main {
     display: grid;
@@ -37,4 +38,41 @@
     justify-content: center;
     height: 26px;
     width: 50px;
+}
+.formAdd {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    justify-content: space-between;
+    height: 400px;
+}
+.exitButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+.form__control {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+.form__input {
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+}
+.form__buttonAdd {
+    width: 60px;
+    height: 30px;
+    align-self: flex-end;
+    background-color: #e8e8e8;
+    border: none;
+    border-radius: 3px;
+    outline: none;
 }

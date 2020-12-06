@@ -8,6 +8,7 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
+  const [error, setError] = useState(false)
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,7 +23,8 @@ function Login() {
         history.push("/dashboard");
       })
       .catch((err) => {
-        console.log(err);
+        setError(true);
+        console.log(err)
       });
   };
   return (
@@ -34,32 +36,44 @@ function Login() {
           <div className="login__logo">
             <img src="https://via.placeholder.com/100" alt="logo" />
           </div>
-          <form onSubmit={handleSubmit}>
+          <form className="login__form" onSubmit={handleSubmit}>
             <div className="login__input">
-              <label>Email</label>
+              <label htmlFor="email">Email</label>
               <input
                 type="email"
+                name="email"
                 placeholder="Email"
+                required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="login__input">
-              <label>Password</label>
+              <label htmlFor="password">Password</label>
               <input
                 type="password"
+                name="password"
                 placeholder="Password"
+                required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            <Link to="/reset">
+            <Link className="forgot" to="/reset">
               Forgot password ?
             </Link>
+            {
+            error && (
+              <div className="error">
+                Something went wrong!
+              </div>
+            )
+          }
             <button type="submit" className="login__button">
               Login
             </button>
           </form>
+          
         </div>
       )}
     </React.Fragment>
